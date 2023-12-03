@@ -131,3 +131,6 @@ dist
 
 #build directory
 build/*
+
+#POSTGRES
+postgres-data/*
