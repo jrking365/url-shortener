@@ -1,0 +1,23 @@
+FROM  node:20-alpine as base
+
+ARG app_path=/app
+
+RUN mkdir -p $app_path
+
+WORKDIR $app_path
+
+COPY . $app_path
+
+FROM --platform=linux/amd64 base AS development 
+ENV NODE_ENV=development
+EXPOSE 3000
+CMD [ "npm", "run", "start:dev" ]
+
+# FROM --platform=linux/amd64 base AS production
+# COPY package.json package-lock.json $app_path/
+# RUN apk --no-cache add npm && npm install --production
+# # RUN npm run build
+# # COPY .env $app_path/build/
+# ENV NODE_ENV=production
+# EXPOSE 9000
+# CMD ["npm", "start"]
