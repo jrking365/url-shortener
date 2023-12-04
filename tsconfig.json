@@ -107,5 +107,8 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "files": ["url-shortener.d.ts"],
+  "include": ["src", "app.ts", "config/**/*"],
+  "exclude": ["node_modules", "buld"]
 }

@@ -1,5 +1,6 @@
 import express from 'express';
 import swaggerUi from "swagger-ui-express";
+import config from 'config';
 
 const app = express();
 const port = 3000;
@@ -21,4 +22,4 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(port, () => console.log(`Express is listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`Express is listening at http://localhost:${config.service.port}`));

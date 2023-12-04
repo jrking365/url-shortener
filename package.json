@@ -4,7 +4,7 @@
   "description": "url shortener api",
   "main": "app.ts",
   "scripts": {
-    "start:dev": "nodemon --exec ts-node app.ts",
+    "start:dev": "nodemon --exec ts-node app.ts --watch .",
     "build": "tsc",
     "swagger": "tsoa spec",
     "lint": "eslint .",
@@ -21,11 +21,16 @@
   },
   "homepage": "https://github.com/jrking365/url-shortener#readme",
   "dependencies": {
+    "config": "^3.3.9",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "pg": "^8.11.3",
     "swagger-ui-express": "^5.0.0",
     "tsoa": "^5.1.1"
   },
   "devDependencies": {
+    "@types/config": "^3.3.3",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.10.2",
     "@types/swagger-ui-express": "^4.1.6",
