@@ -8,7 +8,10 @@ WORKDIR $app_path
 
 COPY . $app_path
 
-FROM --platform=linux/amd64 base AS development 
+RUN npm install
+RUN npm rebuild bcrypt 
+
+FROM base AS development 
 ENV NODE_ENV=development
 EXPOSE 3000
 CMD [ "npm", "run", "start:dev" ]

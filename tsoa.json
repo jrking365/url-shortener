@@ -1,6 +1,10 @@
 {
-    "entryFile": "./app.ts",
-    "noImplicitAdditionalProperties": "throw-on-extras",
+    "entryFile": "app.ts",
+    "controllerPathGlobs": ["./src/resources/controllers/**/*.ts"],
+    "routes": {
+     "routesDir": "./src/routes"
+    },
+    "noImplicitAdditionalProperties": "silently-remove-extras",
     "spec": {
       "outputDirectory": "public",
       "specVersion": 3
