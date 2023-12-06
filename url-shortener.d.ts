@@ -3,6 +3,9 @@ type ConfigDefinition = {
     service: {
       port: number;  
     }
+    shortener: {
+        baseUrl: string;
+    }
     database: {
         host: string;
         port: number;

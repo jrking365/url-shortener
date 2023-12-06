@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jrking365/url-shortener#readme",
   "dependencies": {
+    "@types/koa": "^2.13.12",
     "@types/pg": "^8.10.9",
     "@types/winston": "^2.4.4",
     "bcrypt": "^5.1.1",
@@ -30,6 +31,7 @@
     "config": "^3.3.9",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "koa": "^2.14.2",
     "pg": "^8.11.3",
     "swagger-ui-express": "^5.0.0",
     "tsoa": "^5.1.1",

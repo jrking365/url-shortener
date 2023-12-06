@@ -6,6 +6,22 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
+			"CreateShortUrlParams": {
+				"properties": {
+					"url": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"url",
+					"userId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"User": {
 				"properties": {
 					"id": {
@@ -97,6 +113,58 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
+		"/s/{code}": {
+			"get": {
+				"operationId": "GetOriginalUrl",
+				"responses": {
+					"302": {
+						"description": "Redirect"
+					}
+				},
+				"description": "Redirect to the original url from the short code",
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "code",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/shortener": {
+			"post": {
+				"operationId": "Shortener",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"description": "Shorten a url an return the shortened url\n Takes as params the url to be shortened and the user id",
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateShortUrlParams"
+							}
+						}
+					}
+				}
+			}
+		},
 		"/login": {
 			"post": {
 				"operationId": "Login",
