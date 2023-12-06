@@ -21,7 +21,7 @@ export class ShortenerController extends Controller {
              const user = await findUserById(userId);
              if(!user) {
                  this.setStatus(401);
-                 throw new Error('Invalid user');
+                  return Promise.reject(Error('Invalid user'));
              }
 
              const shortUrl = await createShortUrl({
@@ -29,9 +29,9 @@ export class ShortenerController extends Controller {
                 userId,
              })
 
+            this.setStatus(201);
             return `${config.shortener.baseUrl}s/${shortUrl.code}`;
           } catch (error) {
-            console.log(error)
             logger.error(`An error occurred while creating url short`, error);
             this.setStatus(500);
             throw new Error('Internal Server Error');
