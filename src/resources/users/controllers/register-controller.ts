@@ -22,6 +22,7 @@ export class RegisterController extends Controller {
               email,
               password: hashedPassword,
             });
+            console.log(user);
         
         
            this.setStatus(201);

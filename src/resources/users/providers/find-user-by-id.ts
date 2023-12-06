@@ -7,7 +7,7 @@ export function findUserById(id:string): Promise<UserDb | null>{
         text:`
             SELECT id, first_name, last_name, email, password, created_at, updated_at
             FROM users
-            WHERE email = $1
+            WHERE id = $1
         `,
         values: [id],
     }).then((result) => result?.rows[0]);

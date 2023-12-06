@@ -31,7 +31,8 @@ export class ShortenerController extends Controller {
 
             return `${config.shortener.baseUrl}s/${shortUrl.code}`;
           } catch (error) {
-            logger.error(`An error occurred while creating user`, error);
+            console.log(error)
+            logger.error(`An error occurred while creating url short`, error);
             this.setStatus(500);
             throw new Error('Internal Server Error');
           }
