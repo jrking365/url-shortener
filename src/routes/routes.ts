@@ -75,7 +75,6 @@ export function RegisterRoutes(app: Router) {
             function ShortController_getOriginalUrl(request: any, response: any, next: any) {
             const args = {
                     code: {"in":"path","name":"code","required":true,"dataType":"string"},
-                    request: {"in":"request","name":"request","required":true,"dataType":"object"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
