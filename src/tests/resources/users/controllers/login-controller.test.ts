@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt';
 import { LoginController } from '../../../../resources/users/controllers/login-controller';
 import {fetchUserByEmail} from '../../../../resources/users/providers/fetch-user-by-email'
 import { LoginParams } from '../../../../resources/users/types';

@@ -4,6 +4,17 @@ scription url shortener
 
 # Starting the application
 
+first of all add a .env at the root and it can be the following 
+```
+NODE_ENV=development
+PORT=3000
+DB_HOST=db
+DB_PORT=5432
+DB_USERNAME=api
+DB_PASSWORD=api123
+DB_DATABASE=url_shortener
+```
+
 to start the api and the database , just run
 
 ```bash
