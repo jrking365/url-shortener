@@ -8,6 +8,7 @@
     "build": "tsc",
     "tsoa:build": "tsoa build",
     "swagger": "tsoa spec",
+    "tsoa:routes": "tsoa routes",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
