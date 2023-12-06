@@ -1,8 +1,8 @@
 {
     "env": {
       "browser": true,
-      "es2021": true
-    //  "jest/globals": true
+      "es2021": true,
+      "jest/globals": true
     },
     "extends": [
       "airbnb-base",
@@ -21,7 +21,7 @@
       "sourceType": "module",
       "project": "./tsconfig.json"
     },
-    "plugins": ["import", "@typescript-eslint"],
+    "plugins": ["import", "@typescript-eslint", "jest"],
     "settings": {
       "import/resolver": {
         "node": {
@@ -31,6 +31,7 @@
       }
     },
     "rules": {
+      "return-await": "off",
       "no-plusplus": "off",
       "no-restricted-properties": "off",
       "no-restricted-syntax": "off",
@@ -42,6 +43,7 @@
       "import/no-extraneous-dependencies": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/return-await": "off",
       "@typescript-eslint/naming-convention": [
         "error",
         {

@@ -14,16 +14,17 @@ export class LoginController extends Controller {
 
         try {
             const dbUser = await fetchUserByEmail(email);
+            console.log(dbUser)
             if(!dbUser) {
                 this.setStatus(401);
-                throw new Error('Invalid username or password');
+                return Promise.reject(new Error('Invalid username or password'));
             }
     
             const isPasswordValid = await bcrypt.compare(password, dbUser.password);
     
             if(!isPasswordValid) {
                 this.setStatus(401);
-                throw new Error('Invalid username or password');
+                return Promise.reject(new Error('Invalid username or password'));
             }
     
             this.setStatus(200);
